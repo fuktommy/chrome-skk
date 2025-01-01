@@ -62,6 +62,23 @@ function preeditKeybind(skk, keyevent) {
     skk.switchMode('hiragana');
     return true;
   }
+
+  if (keyevent.key == 'l') {
+    skk.commitText(skk.preedit);
+    skk.preedit = '';
+    skk.roman = '';
+    skk.switchMode('ascii');
+    return true;
+  }
+
+  if (keyevent.key == 'L') {
+    skk.commitText(skk.preedit);
+    skk.preedit = '';
+    skk.roman = '';
+    skk.switchMode('full-ascii');
+    return true;
+  }
+
   return false;
 }
 
