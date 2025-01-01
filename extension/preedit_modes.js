@@ -63,7 +63,7 @@ function preeditKeybind(skk, keyevent) {
     return true;
   }
 
-  if (keyevent.key == 'l') {
+  if (keyevent.key == 'l' && skk.currentMode != 'ascii-preedit') {
     skk.commitText(skk.preedit);
     skk.preedit = '';
     skk.roman = '';
@@ -71,7 +71,7 @@ function preeditKeybind(skk, keyevent) {
     return true;
   }
 
-  if (keyevent.key == 'L') {
+  if (keyevent.key == 'L' && skk.currentMode != 'ascii-preedit') {
     skk.commitText(skk.preedit);
     skk.preedit = '';
     skk.roman = '';
