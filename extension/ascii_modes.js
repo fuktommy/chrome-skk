@@ -23,6 +23,10 @@ function createAsciiLikeMode(conv) {
 SKK.registerMode('ascii', {
   displayName: '\u82f1\u6570',
   keyHandler: createAsciiLikeMode(function(skk, key) {
+    if (key == '\xa5') { // yen mark
+        skk.commitText('\\');
+        return true;
+    }
     return false;
   })
 });
